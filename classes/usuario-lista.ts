@@ -19,8 +19,9 @@ export class UsuariosLista{
     public actualizarNombre(id:string, nombre:string){
 
         for(let usuario of this.lista){
-            if(usuario.id = nombre){
-            break;
+            if(usuario.id === id){
+                usuario.nombre=nombre;
+                break;
             }
         }
 
@@ -32,7 +33,7 @@ export class UsuariosLista{
 
     //Obtener lista de usuario
     public getLista(){
-        return this.lista;
+        return this.lista.filter(usuario => usuario.nombre !== 'sin nombre');
     }
 
     //Obtener un solo usuario de la lista
